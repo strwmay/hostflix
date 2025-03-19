@@ -35,7 +35,7 @@ const MoviePoster = (props) => {
                 )}`}
                 target="_blank"
               >
-                ▶ Assistir
+                ▶ Trailer
               </a>
             </div>
           </div>

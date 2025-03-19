@@ -57,6 +57,17 @@
     margin-top: 5px;
     color: #000;
   }
+
+  .movie:hover div:nth-of-type(3) h3 {
+    margin-top: 5px;
+    color: #fff;
+  }
+
+  .movie:hover div:nth-of-type(3) span {
+    margin-top: 5px;
+    color: #949494
+    ;
+  }
   
   .movie:hover div:nth-of-type(2) {
     height: 100%;

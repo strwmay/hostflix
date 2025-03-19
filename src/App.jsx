@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import './App.css'
-import Footer from './components/footer/Footer';
+import "./App.css";
+import Footer from "./components/footer/Footer";
 import MovieCard from "./components/movieCard/MovieCard";
 import Logo from "./assets/logo-hostflix.png";
 import Lupa from "./assets/search.png";
@@ -11,7 +11,7 @@ const App = () => {
 
   // utilizando chave de API do arquivo .env
   // const apiKey = import.meta.env.VITE_OMDB_API_KEY;
-  const apiKey = "e4d577fa"
+  const apiKey = "e4d577fa";
   const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
   // alimentando com dados para não ficar nulo | com o useEffect
@@ -35,22 +35,22 @@ const App = () => {
 
   return (
     <div id="app">
-      <img className="logo" src={Logo} alt="logo" />
-
-      <div className="search">
-        <input
-          onKeyDown={handleKeyPress}
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Busque aqui..."
-        />
-
-        <img
-          onClick={() => searchMovies(search)}
-          src={Lupa}
-          alt="Pesquisar"
-        />
-      </div>
+      <header className="header">
+        <img className="logo" src={Logo} alt="logo" />
+        <div className="search">
+          <input
+            onKeyDown={handleKeyPress}
+            onChange={(e) => setSearch(e.target.value)}
+            type="text"
+            placeholder="Busque aqui..."
+          />
+          <img
+            onClick={() => searchMovies(search)}
+            src={Lupa}
+            alt="Pesquisar"
+          />
+        </div>
+      </header>
 
       {movies?.length > 0 ? (
         <div className="container">
@@ -59,7 +59,7 @@ const App = () => {
           ))}
         </div>
       ) : (
-        <h2>Nada foi encontrado...</h2>
+        <h2 className="empty">Nada foi encontrado...</h2>
       )}
 
       <Footer devName={"@strwmay"} devLink={"https://github.com/strwmay"} />

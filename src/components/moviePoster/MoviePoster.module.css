@@ -70,7 +70,7 @@
   }
   
   .movieType div:nth-of-type(1) img {
-    width: 5%;
+    width: 2%;
     height: 5%;
     border-radius: 0;
   }
@@ -88,6 +88,15 @@
     font-size: 14pt;
     display: flex;
     padding: 2em 2em 1em;
+  }
+
+ a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  a:hover {
+    color: #676767;
   }
   
   .containerFlex {
