@@ -12,6 +12,10 @@
   --bs-body-bg-neg: #d9d9d9 !important;
 }
 
+.colormode {
+  background: var(--bs-body-bg);
+}
+
 * {
   margin: 0;
   border: 0;

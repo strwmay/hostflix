@@ -42,14 +42,17 @@ const MoviePoster = ({ id, click }) => {
   if (!movieDesc) return null;
 
   const posterUrl = movieDesc.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movieDesc.poster_path}`
-    : "https://via.placeholder.com/500x750?text=Sem+Imagem";
+    ? `https://image.tmdb.org/t/p/original${movieDesc.backdrop_path}`
+    : "https://placehold.co/500x750?text=Sem+Imagem";
 
   return (
     <div className={styles.modalBackdrop} onClick={click}>
       <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.movieInfo}>
-          <img src={posterUrl} alt={`Imagem da capa do filme ${movieDesc.title}`} />
+          <img
+            src={posterUrl}
+            alt={`Imagem da capa do filme ${movieDesc.title}`}
+          />
           <button className={styles.btnClose} onClick={click}>
             ╳
           </button>
@@ -57,11 +60,14 @@ const MoviePoster = ({ id, click }) => {
             <div>
               <h1>{movieDesc.title}</h1>
               {trailerKey ? (
-                <button className={styles.trailerButton} onClick={() => setIsTrailerOpen(true)}>
+                <button
+                  className={styles.trailerButton}
+                  onClick={() => setIsTrailerOpen(true)}
+                >
                   ▶ Trailer
                 </button>
               ) : (
-                <p className={styles.noTrailer}>Trailer não disponível</p>
+                <p className={styles.noTrailer}>Trailer Indisponível</p>
               )}
             </div>
           </div>
@@ -69,11 +75,23 @@ const MoviePoster = ({ id, click }) => {
 
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
-            Avaliação: {movieDesc.vote_average.toFixed(1)} | Duração: {movieDesc.runtime} min | {movieDesc.release_date}
+            Avaliação: {movieDesc.vote_average.toFixed(1)}/10 | Duração:{" "}
+            {movieDesc.runtime} min <br /> Lançamento: {movieDesc.release_date}
+            <p>
+              Gênero:{" "}
+              {movieDesc.genres?.map((genre) => genre.name).join(", ") ||
+                "Não informado"}
+            </p>
           </div>
           <div className={styles.containerFlex}>
-            <p>Elenco: {movieDesc.credits?.cast?.slice(0, 5).map((actor) => actor.name).join(", ") || "Não disponível"}</p>
-            <p>Gênero: {movieDesc.genres?.map((genre) => genre.name).join(", ") || "Não informado"}</p>
+            <p>
+              Elenco:{" "}
+              {movieDesc.credits?.cast
+                ?.slice(0, 5)
+                .map((actor) => actor.name)
+                .join(", ") || "Não disponível"}
+            </p>
+            
           </div>
         </div>
         <div className={styles.desc}>
@@ -83,9 +101,20 @@ const MoviePoster = ({ id, click }) => {
 
       {/* POP-UP DO TRAILER */}
       {isTrailerOpen && (
-        <div className={styles.trailerBackdrop} onClick={() => setIsTrailerOpen(false)}>
-          <div className={styles.trailerModal} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.btnClose} onClick={() => setIsTrailerOpen(false)}>╳</button>
+        <div
+          className={styles.trailerBackdrop}
+          onClick={() => setIsTrailerOpen(false)}
+        >
+          <div
+            className={styles.trailerModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.btnClose}
+              onClick={() => setIsTrailerOpen(false)}
+            >
+              ╳
+            </button>
             <iframe
               width="100%"
               height="450"

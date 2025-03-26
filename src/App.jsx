@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-    <div id="app" className="bg-gray-900">
+    <div id="app" className="colormode">
       <Header
         search={search}
         setSearch={setSearch}

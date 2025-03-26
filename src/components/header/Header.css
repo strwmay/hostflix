@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 80%;
-  background: #212426;
+  background: var(--bs-body-bg);
   z-index: 100;
 }
 
