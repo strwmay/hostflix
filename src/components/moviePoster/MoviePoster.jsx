@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import hostflix from "/icon-hostflix.png";
 import styles from "./MoviePoster.module.css";
 
 const MoviePoster = ({ id, click }) => {
@@ -56,7 +55,6 @@ const MoviePoster = ({ id, click }) => {
           </button>
           <div className={styles.movieType}>
             <div>
-              <img src={hostflix} alt="" />
               <h1>{movieDesc.title}</h1>
               {trailerKey ? (
                 <button className={styles.trailerButton} onClick={() => setIsTrailerOpen(true)}>
