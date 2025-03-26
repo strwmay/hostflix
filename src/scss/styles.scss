@@ -1,0 +1,184 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Definição de cores neutras (grays)
+$grays: (
+  "gray-100": #f8f9fa,
+  "gray-200": #e9ecef,
+  "gray-300": #dee2e6,
+  "gray-400": #ced4da,
+  "gray-500": #adb5bd,
+  "gray-600": #6c757d,
+  "gray-700": #495057,
+  "gray-800": #343a40,
+  "gray-900": #212529
+);
+
+// Definição de cores pastel com variações
+$pastels: (
+  "pastel-blue-100": #e3f2fd,
+  "pastel-blue-200": #bbdefb,
+  "pastel-blue-300": #90caf9,
+  "pastel-blue-400": #64b5f6,
+  "pastel-blue-500": #42a5f5,
+  "pastel-blue-600": #2196f3,
+  "pastel-blue-700": #1e88e5,
+  "pastel-blue-800": #1976d2,
+  "pastel-blue-900": #1565c0,
+
+  "pastel-red-100": #ffebee,
+  "pastel-red-200": #ffcdd2,
+  "pastel-red-300": #ef9a9a,
+  "pastel-red-400": #e57373,
+  "pastel-red-500": #ef5350,
+  "pastel-red-600": #f44336,
+  "pastel-red-700": #e53935,
+  "pastel-red-800": #d32f2f,
+  "pastel-red-900": #c62828,
+
+  "pastel-pink-100": #fce4ec,
+  "pastel-pink-200": #f8bbd0,
+  "pastel-pink-300": #f48fb1,
+  "pastel-pink-400": #f06292,
+  "pastel-pink-500": #ec407a,
+  "pastel-pink-600": #e91e63,
+  "pastel-pink-700": #d81b60,
+  "pastel-pink-800": #c2185b,
+  "pastel-pink-900": #ad1457,
+
+  "pastel-green-100": #e8f5e9,
+  "pastel-green-200": #c8e6c9,
+  "pastel-green-300": #a5d6a7,
+  "pastel-green-400": #81c784,
+  "pastel-green-500": #66bb6a,
+  "pastel-green-600": #4caf50,
+  "pastel-green-700": #43a047,
+  "pastel-green-800": #388e3c,
+  "pastel-green-900": #2e7d32,
+
+  "pastel-yellow-100": #fffde7,
+  "pastel-yellow-200": #fff9c4,
+  "pastel-yellow-300": #fff59d,
+  "pastel-yellow-400": #fff176,
+  "pastel-yellow-500": #ffee58,
+  "pastel-yellow-600": #ffeb3b,
+  "pastel-yellow-700": #fdd835,
+  "pastel-yellow-800": #fbc02d,
+  "pastel-yellow-900": #f9a825,
+
+  "pastel-purple-100": #ede7f6,
+  "pastel-purple-200": #d1c4e9,
+  "pastel-purple-300": #b39ddb,
+  "pastel-purple-400": #9575cd,
+  "pastel-purple-500": #7e57c2,
+  "pastel-purple-600": #673ab7,
+  "pastel-purple-700": #5e35b1,
+  "pastel-purple-800": #512da8,
+  "pastel-purple-900": #4527a0,
+
+  "pastel-cyan-100": #e0f7fa,
+  "pastel-cyan-200": #b2ebf2,
+  "pastel-cyan-300": #80deea,
+  "pastel-cyan-400": #4dd0e1,
+  "pastel-cyan-500": #26c6da,
+  "pastel-cyan-600": #00bcd4,
+  "pastel-cyan-700": #00acc1,
+  "pastel-cyan-800": #0097a7,
+  "pastel-cyan-900": #00838f,
+
+  "pastel-teal-100": #e0f2f1,
+  "pastel-teal-200": #b2dfdb,
+  "pastel-teal-300": #80cbc4,
+  "pastel-teal-400": #4db6ac,
+  "pastel-teal-500": #26a69a,
+  "pastel-teal-600": #009688,
+  "pastel-teal-700": #00897b,
+  "pastel-teal-800": #00796b,
+  "pastel-teal-900": #00695c,
+
+  "pastel-orange-100": #fff3e0,
+  "pastel-orange-200": #ffe0b2,
+  "pastel-orange-300": #ffcc80,
+  "pastel-orange-400": #ffb74d,
+  "pastel-orange-500": #ffa726,
+  "pastel-orange-600": #ff9800,
+  "pastel-orange-700": #fb8c00,
+  "pastel-orange-800": #f57c00,
+  "pastel-orange-900": #ef6c00,
+);
+
+// Definição de cores vibrantes com variações
+$vibrants: (
+  "vibrant-blue-100": #cce5ff,
+  "vibrant-blue-200": #99ccff,
+  "vibrant-blue-300": #66b2ff,
+  "vibrant-blue-400": #3399ff,
+  "vibrant-blue-500": #007bff,
+  "vibrant-blue-600": #0066cc,
+  "vibrant-blue-700": #0052a3,
+  "vibrant-blue-800": #003d7a,
+  "vibrant-blue-900": #002952,
+
+  "vibrant-red-100": #ffccd5,
+  "vibrant-red-200": #ff99aa,
+  "vibrant-red-300": #ff667f,
+  "vibrant-red-400": #ff3355,
+  "vibrant-red-500": #ff073a,
+  "vibrant-red-600": #cc062f,
+  "vibrant-red-700": #a30526,
+  "vibrant-red-800": #7a031c,
+  "vibrant-red-900": #520213,
+
+  "vibrant-green-100": #ccf5cc,
+  "vibrant-green-200": #99eb99,
+  "vibrant-green-300": #66e066,
+  "vibrant-green-400": #33d633,
+  "vibrant-green-500": #28a745,
+  "vibrant-green-600": #208a39,
+  "vibrant-green-700": #186d2d,
+  "vibrant-green-800": #105021,
+  "vibrant-green-900": #083315,
+);
+
+// Mesclando todas as cores em um único mapa
+$all-custom-colors: map-merge-multiple($grays, $pastels, $vibrants, $blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+// Atualizando as utilidades para text-color e background-color
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $all-custom-colors
+          ),
+        ),
+      ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $all-custom-colors
+          ),
+        ),
+      ),
+    )
+  )
+);
+
+:root {
+  @each $color-name, $color-value in $all-custom-colors {
+    --#{$color-name}: #{$color-value};
+  }
+}
+@import "bootstrap/scss/utilities/api";
